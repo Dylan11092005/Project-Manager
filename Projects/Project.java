@@ -48,6 +48,15 @@ public class Project {
         this(0, null, new ArrayList<Task>());
     }
     
+    public int countTask(){
+        return this.listTask.size();
+    }
     
+    public completeTask{
+    long completeTask= listTask.stream().filter(Task::isComplete.count();
+}
+    
+    public complete
+            
     
 }
