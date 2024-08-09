@@ -36,7 +36,7 @@ public class Comment {
     public Comment() {
         this (0,new User(),null);
     
-    
+    }
     
     
     
