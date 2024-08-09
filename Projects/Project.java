@@ -4,6 +4,7 @@
  */
 package Projects;
 
+import Tasks.Task;
 import java.util.ArrayList;
 
 /**

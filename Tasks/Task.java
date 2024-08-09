@@ -13,10 +13,10 @@ import java.util.ArrayList;
  * @author Tony
  */
 public class Task {
-   public static final char COMP = 'C' , NOCOMP = 'N';
+  
     private  int id ;
     private  String description;
-    private  char complete;
+    private  boolean complete;
     private  User user;
     private  ArrayList<Comment> listComment;
 
@@ -28,26 +28,15 @@ public class Task {
         this.description = description;
     }
 
-    public String getComplete() {
-         switch (complete) {
-            case COMP -> {
-                return "completado";
-            }
-            case NOCOMP -> {
-                return "no completado";
-            }
-           
-        }
-         return null;
+    public boolean isComplete() {
+        return complete;
     }
 
-    public void setComplete(char complete) {
-        complete = Character.toUpperCase(complete);
-         
-        if (complete == 'C' || complete == 'N') {
-            this.complete = complete;
-        }
+    public void setComplete(boolean complete) {
+        this.complete = complete;
     }
+
+
 
     public User getUser() {
         return user;
@@ -74,6 +63,18 @@ public class Task {
     
     public void deleteComment (int object){
         this.listComment.removeIf(comment -> comment.getId() == object);
+    }
+
+    public Task(int id, String description,User user, ArrayList<Comment> listComment) {
+        this.id = id;
+        this.description = description;
+        this.complete = false;
+        this.user = user;
+        this.listComment = listComment;
+    }
+
+    public Task() {
+        this(0,"",new User(),new ArrayList());
     }
     
     
